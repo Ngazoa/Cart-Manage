@@ -43,13 +43,37 @@ describe('ProductsListComponent', () => {
     httpSpy = TestBed.inject<any>(HttpClient);
   });
 
- 
+
   it('should return component with userlist initialize', (done: DoneFn) => {
     httpSpy.get.and.nextWith(fakearicles);
 
     service.getProductList().subscribe(
       customers => {
         expect(customers).toHaveSize(fakearicles.length);
+        done();
+      },
+      done.fail
+    );
+    expect(httpSpy.get.calls.count()).toBe(1);
+  });
+
+  it('Update product quantity with Id 1000 Should not work', (done: DoneFn) => {
+    httpSpy.get.and.nextWith(fakearicles);
+    let productToUpdateValue = 7;
+    let productid = 1000;
+    let hasget = false;
+    service.getProductList().subscribe(
+      products => {
+        let i = 0;
+        for (let p of products) {
+          // search datas to modify and update it in the active Json file
+          if (products[i].id == productid) {
+            products[i].quantity = productToUpdateValue;
+            hasget = true;//test will  fail here
+          }
+          i = i + 1;
+        }
+        expect(hasget).toBe(false);
         done();
       },
       done.fail

@@ -12,6 +12,8 @@ export class CartComponent implements OnInit {
   taxesTotal = 0;
   TTcTotal = 0;
   grandTotal = 0;
+  productInCart = 0;
+  pageTitle = "Cart product(s)";
 
   constructor(private cartService: CartService) { }
 
@@ -27,6 +29,7 @@ export class CartComponent implements OnInit {
   }
 
   loadCardArticles() {
+    this.productInCart = this.cartService.getPanierSizeElements();
     this.ArticleList = this.cartService.getPanierList();
     this.TTcTotal = 0;
     this.taxesTotal = 0;

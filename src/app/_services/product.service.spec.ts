@@ -54,11 +54,6 @@ describe('ProductService', () => {
     expect(httpSpy.get.calls.count()).toBe(1);
   });
 
-  it('Observable to get json data should work', () => {
-      let loading = service.getProductList();
-      expect(loading).not.toBeNull();
-    });
-
 });
 
 

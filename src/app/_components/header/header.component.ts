@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   userPhone="+33 605 919 611";
 
   @Input() productInCart=0;
+  @Input() pageTitle = "PageTitle"
 
   constructor() { }
 

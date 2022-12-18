@@ -21,6 +21,7 @@ export class ProductsListComponent implements OnInit, OnDestroy {
   isVisible = false;
   productInCart = 0;
   category = "";
+  pageTitle=" Product list";
 
   alertMessage = "Waiting for new product in cart...";
 

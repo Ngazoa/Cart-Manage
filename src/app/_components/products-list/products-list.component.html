@@ -1,5 +1,5 @@
 <!-- Child  Header component start -->
-<app-header [productInCart]="productInCart"></app-header>
+<app-header [productInCart]="productInCart" [pageTitle]="pageTitle"></app-header>
  <!-- End of header component-->
 
     <!-- Product List Start -->
@@ -15,25 +15,22 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="product-view-top">
+                            
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="product-search">
                                            <input type="text" class="form-control mb-4"
-                                            placeholder="Search by cathegory" [(ngModel)]="query">
+                                            placeholder="Search by category" [(ngModel)]="query">
                                             <button><i class="fa fa-search"></i></button>
                                         </div>
                                     </div>
-                         </div>
-                  </div>
-                </div>
-
+                              </div>
+                       </div>
             <!--    
                 
                 Generate product list and pagination
             
             -->
-
               <div class="col-md-4" *ngFor="let product of products|productFilterByName:query|paginate
               : {
                   itemsPerPage: tableSize,
@@ -68,8 +65,6 @@
                         </a>
                         <div class="product-action">
                             <a (click)="articleChoosed(product)"><i class="fa fa-cart-plus"></i></a>
-                            <a href="#"><i class="fa fa-heart"></i></a>
-                            <a href="#"><i class="fa fa-search"></i></a>
                         </div>
                     </div>
                     <div class="product-price">
@@ -85,9 +80,7 @@
       </div>
       <!--
         End of product/ article table
-    -->
-
-   
+    -->   
     <div class="col-lg-4 sidebar">
          <!-- Child Componet  detail product  start  -->
         <app-products-details [product]="productchoosed" 
@@ -97,15 +90,10 @@
         <!--End of Child Componet  detail product   -->
         <h3 *ngIf="!isVisible" > {{alertMessage}}</h3>
     </div>
-    
-
    </div>
   </div>
  </div>
           
-
-<div class="featured-product product"  >
-    
 <!-- Controle pagination to 3 elements-->
 <div class="d-flex justify-content-center">
     <pagination-controls previousLabel="Prev"
