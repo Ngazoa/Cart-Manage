@@ -1,4 +1,4 @@
-# Cart-Manage
+# Karta-panier
 projet  test Karta Panier de gestion des articles dans un panier  (ajout-retrait du panier, calcul des prix hors Taxes de
  TTc,recherche filtrée et le recapitulatif en angular)
 
