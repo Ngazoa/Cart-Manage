@@ -1,12 +1,6 @@
 # Cart-Manage
-projet test de gestion des articles 
-
-# Cart-Manage
-projet test de gestion des articles 
-
-
- Application test de gestion d'un mini panier
-
+projet  test Karta Panier de gestion des articles dans un panier  (ajout-retrait du panier, calcul des prix hors Taxes de
+ TTc,recherche filtrée et le recapitulatif en angular)
 
  But de lapplication:
     - ajouter un nouveau produit dans le panier
@@ -15,6 +9,7 @@ projet test de gestion des articles
     - filtrer la liste des produits en fonction de la categorie
     - calculer les differentes taxes et les prix HT, TTC puis les afficher
     - Afficher le recapitulatif
+    - Filtrer la liste des produits
 
  Fonctionnement de l'application:
     - elle fonction suivant le principe MVC:
