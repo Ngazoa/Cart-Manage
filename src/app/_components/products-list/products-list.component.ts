@@ -79,7 +79,7 @@ export class ProductsListComponent implements OnInit, OnDestroy {
     this.productchoosed = panier;
 
   }
-  getCartDetails(productCount: number) {
+  getCartDetails(productCount: number):void {
 
     this.productInCart = this.cartService.getPanierSizeElements();
     this.isVisible = false;

@@ -4,6 +4,7 @@ projet  test Karta Panier de gestion des articles dans un panier  (ajout-retrait
 
  But de lapplication:
     - ajouter un nouveau produit dans le panier
+    
     - retirer un un produit
     - afficher la liste des produits en rang de 3 en 3
     - filtrer la liste des produits en fonction de la categorie

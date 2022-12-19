@@ -100,7 +100,7 @@ export class ProductsDetailsComponent implements OnInit, OnChanges {
     }
   }
 
-  calculProductPrice() {
+  calculProductPrice():void {
     if (this.category != "Food" && this.category != "Medecine") {
       if (this.category == "Books" && !this.isImport) {
         this.taxe = this.calculPercntReduction(this.price, 10)
@@ -118,24 +118,26 @@ export class ProductsDetailsComponent implements OnInit, OnChanges {
     this.ttcPrice(this.taxe);
   }
 
-  ttcPrice(taxe: number) {
+  ttcPrice(taxe: number):void {
     this.TTC = this.price + this.counter * (this.price * taxe / 100);
     this.HT = this.price;
   }
 
-  calculPercntReduction(uniprice: number, percnt: number) {
+  calculPercntReduction(uniprice: number, percnt: number):number {
     return (uniprice * percnt) / 100
   }
 
   roundNumber(num: number): number {
     if (num < 1) {
       num = Math.round(num);
+    }else{
+      num = Math.round(num*100)/100;
     }
     return num;
   }
 
   // return output response for actualize datas of parent component
-  getelementTopanier() {
+  getelementTopanier():void {
     this.addPannier.emit(this.quantity);
   }
 
